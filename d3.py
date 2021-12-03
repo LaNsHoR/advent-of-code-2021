@@ -38,10 +38,6 @@ def process_queue( queue, criteria):
         bit = common_bit( queue, "volatile" )
         for word in queue:
             first = word["volatile"][0]
-            # Last word found
-            if( len( queue ) + len(new_queue) == 1 ):
-                return word["base"]
-            # Compare criteria
             if( (bit == 0 and first == criteria[0]) or
                 (bit == 1 and first == criteria[1]) or
                 (bit == 2 and first == criteria[2]) ):              
